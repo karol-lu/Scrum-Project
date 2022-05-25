@@ -1,8 +1,8 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var sourcemaps = require("gulp-sourcemaps");
-var autoprefixer = require("gulp-autoprefixer");
-var browserSync = require("browser-sync").create();
+const gulp = require("gulp");
+const sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require("gulp-sourcemaps");
+const autoprefixer = require("gulp-autoprefixer");
+const browserSync = require("browser-sync").create();
 
 gulp.task("watch", function(cb) {
   gulp.watch("development/scss/**/*.scss", gulp.series("sass"));
