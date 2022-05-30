@@ -14,18 +14,20 @@
  &_links{
      display: flex;
      flex-direction: row;
+     &_item a{
+         padding: 0 60px;
+     
+         font-family: $primary-text-font;
+         text-decoration: none;
+         text-transform: uppercase;
+         color: $background-color;
+         cursor: pointer;
+         &:hover{
+             color: $buttons-color;
+         }
+     }
  }
 }
-
-li{
-    padding: 0 60px;
-
-    font-family: $primary-text-font;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $background-color;
-    cursor: pointer;
-    &:hover{
-        color: $buttons-color;
-    }
+.header_logo{
+    height: 100px;
 }
