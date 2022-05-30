@@ -24,12 +24,16 @@
   }
   .btn {
     background-color: $buttons-color;
-    color: $background-color;
     font-size: 20px;
     font-weight: bold;
     padding: 6px 10px;
     border: none;
     width: 218px;
     height: 55px;
+  }
+  a {
+    text-decoration: none;
+    color: $background-color;
+
   }
 }
