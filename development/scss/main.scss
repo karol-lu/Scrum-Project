@@ -1,10 +1,23 @@
+@import "./generic/reset";
+@import "./settings/fonts";
+@import "./settings/colors";
+@import "./settings/var";
+@import "./settings/mixin.scss";
+@import "./sections/nav.scss";
+@import "./sections/carousel";
+@import "./sections/cta";
+@import "./sections/features";
+@import "./sections/newsletter";
+@import "./sections/aboutme";
+@import "./sections/threecolumns";
+@import "./sections/footer";
+
 // CDN FONTAWESOME
 // <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 //
 // Sass:
 // https://fontawesome.com/how-to-use/on-the-web/using-with/sass
 
-
-body{
-  background-color: #BADA55;
+body {
+  background-color: #bada55;
 }
