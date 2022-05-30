@@ -1,0 +1,35 @@
+.newsletter {
+  height: 150px !important;
+  background-color: $text-color;
+  .newsletter-text {
+    color: $background-color;
+    font-size: 48px;
+    padding: 0 60px;
+  }
+}
+
+.button-container {
+  padding: 0 60px;
+  .newsletter-button {
+    background-color: $buttons-color;
+    width: 218px;
+    height: 55px;
+    font-size: 20px;
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .newsletter-input {
+    width: 287px;
+    height: 55px;
+    font-size: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    padding: 0px 10px;
+    border: 0px solid $background-color;
+  }
+  .button-text {
+    font-weight: bold;
+  }
+}
