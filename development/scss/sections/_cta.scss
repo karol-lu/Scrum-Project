@@ -2,6 +2,7 @@
   background-color: $text-color;
   height: 250px;
   .container {
+    padding: 0 35px;
     height: 250px;
     width: 1440px;
     margin: 0 auto;
@@ -25,6 +26,7 @@
     background-color: $buttons-color;
     color: $background-color;
     font-size: 20px;
+    font-weight: bold;
     padding: 6px 10px;
     border: none;
     width: 218px;
