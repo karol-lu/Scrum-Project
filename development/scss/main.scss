@@ -12,6 +12,7 @@
 @import "./sections/threecolumns";
 @import "./sections/footer";
 @import "./sections/emptydashboard";
+@import "./sections/firstentry";
 
 // CDN FONTAWESOME
 // <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -20,10 +21,10 @@
 // https://fontawesome.com/how-to-use/on-the-web/using-with/sass
 
 body {
-  background-color: tomato;
+  background-color: #fffffa;
 }
 
 .container{
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
 }
