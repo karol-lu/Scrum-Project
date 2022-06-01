@@ -1,0 +1,24 @@
+.about-section {
+  background-color: $background-color;
+  height: 541px !important;
+  .about-picture-container {
+    padding: 0 60px;
+  }
+  .about-picture {
+    background-color: $text-color;
+    width: 337px;
+    height: 353px;
+  }
+  .about-right-container {
+    padding: 0 60px;
+    margin-bottom: 100px;
+    .about-title {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .about-text {
+      font-size: 24px;
+    }
+  }
+}
