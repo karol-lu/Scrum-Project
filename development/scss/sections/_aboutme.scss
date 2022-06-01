@@ -1,13 +1,17 @@
 .about-section {
-  background-color: $background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;
   height: 541px !important;
   .about-picture-container {
-    padding: 0 60px;
+    padding: 0 100px;
   }
   .about-picture {
     background-color: $text-color;
     width: 337px;
     height: 353px;
+    margin-left: 20px;
   }
   .about-right-container {
     padding: 0 60px;
