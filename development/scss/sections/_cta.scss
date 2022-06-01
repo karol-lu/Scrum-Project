@@ -1,12 +1,11 @@
 .cta {
   background-color: $text-color;
   height: 250px;
-  .container {
+  
+  &_box {
     height: 250px;
-    width: 1440px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-family: $primary-text-font;
   }
@@ -34,6 +33,5 @@
   a {
     text-decoration: none;
     color: $background-color;
-
   }
 }

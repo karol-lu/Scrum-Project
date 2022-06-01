@@ -1,0 +1,130 @@
+.carousel {
+  position: relative;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.64);
+  margin-top: 26px;
+  height: 500px;
+  background: $table-text-color;
+
+  &-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+.carousel-open:checked + .carousel-item {
+  position: static;
+  opacity: 100;
+}
+
+.carousel-item {
+  position: absolute;
+  opacity: 0;
+  transition: opacity;
+
+  img {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+
+  &-text {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+
+    font-size: $slider-font-size;
+
+    p {
+      padding: 50px 250px;
+      text-align: center;
+    }
+  }
+}
+
+.carousel-control {
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-size: 40px;
+  height: 40px;
+  line-height: 35px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: center;
+  width: 40px;
+  z-index: 10;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+  }
+}
+
+.carousel-control.prev {
+  left: 2%;
+}
+
+.carousel-control.next {
+  right: 2%;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: block;
+}
+
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+
+  li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+}
+
+.carousel-bullet {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 35px;
+
+  &:hover {
+    color: #aaaaaa;
+  }
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+  color: #428bca;
+}
+
+#title {
+  width: 100%;
+  position: absolute;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 27px;
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Open Sans', sans-serif;
+  z-index: 9999;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}
