@@ -34,7 +34,345 @@
         <p class="sidebar_schedule sidebar_paragraph">Plany</p>
       </div>
       <div class="main">
-       
+        <section class="new_plan">
+          <div class="new_plan_box">
+            <div class="new_plan_header">
+              <h2 class="new_plan_title">NOWY PLAN</h2>
+              <button class="btn new_plan_btn">Zapisz i zamknij</button>
+            </div>
+            <form class="new_plan_form" action="">
+              <div class="new_plan_container">
+                <label class="new_plan_label new_plan_name" for="plan_name">Nazwa planu</label>
+                <input class="new_plan_input new_plan_name" type="text" id="plan_name" placeholder="Plan jarski na bezmięsny tydzień">
+              </div>
+              <div class="new_plan_container">
+                <label class="new_plan_label" for="plan_description">Opis planu</label>
+                <textarea class="new_plan_input new_plan_description" type="text" id="plan_description" placeholder="Pojęcie kuchnia wegetariańska określa pożywienie, które ani nie zawiera mięsa, ani nie zostało przygotowane na bazie pochodzącej z mięsa (np. na rosole drobiowym). Laktoowowegetarianie (najczęściej spotykany typ wegetarian w zachodnim świecie) spożywają nabiał, laktowegetarianie wykluczają jaja, ale nie inne produkty nabiałowe."></textarea>
+              </div>  
+              <div>
+                <label class="new_plan_label" for="plan_day">Numer tygodnia</label>
+                <input class="new_plan_day" type="number" id="plan_day" min="1" max="7" value="5">
+              </div>    
+            </form>
+            <div class="plan_meal">
+              <table class="table_meal">
+                <thead>
+                  <tr class="table_meal_tr">
+                    <th class="table_meal_title"></th>
+                    <th class="table_meal_title">ŚNIADANIE</th>
+                    <th class="table_meal_title">DRUGIE<br> ŚNIADANIE</th>
+                    <th class="table_meal_title">ZUPA</th>
+                    <th class="table_meal_title">DRUGIE<br> DANIE</th>
+                    <th class="table_meal_title">KOLACJA</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>PONIEDZIAŁEK</th>
+                    <td>
+                      <select class="select_meal meal_monday meal_breakfast" name="monday" id="monday_brakfast">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_monday meal_brunch" name="monday" id="monday_brunch">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_monday meal_soup" name="monday" id="monday_soup">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_monday meal_main" name="monday" id="monday_main">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_monday meal_dinner" name="monday" id="monday_dinner">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>WTOREK</th>
+                    <td>
+                      <select class="select_meal meal_tuesday meal_breakfast" name="tuesday" id="tuesday_brakfast">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_tuesday meal_tuesday" name="tuesday" id="tuesday_brunch">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_tuesday meal_soup" name="tuesday" id="tuesday_soup">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_tuesday meal_main" name="tuesday" id="tuesday_main">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_tuesday meal_dinner" name="tuesday" id="tuesday_dinner">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>ŚRODA</th>
+                    <td>
+                      <select class="select_meal meal_wdnesday meal_breakfast" name="wednesday" id="wednesday_brakfast">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_wednesday meal_brunch" name="wednesday" id="wednesday_brunch">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_wednesday meal_soup" name="wednesday" id="wednesday_soup" form="wednesday_soup">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_wednesday meal_main" name="wednesday" id="wednesday_main">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_wednesday meal_dinner" name="wednesday" id="wednesday_dinner">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>CZWARTEK</th>
+                    <td>
+                      <select class="select_meal meal_thursday meal_breakfast" name="thursday" id="thursday_brakfast">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_thursday meal_brunch" name="thursday" id="thursday_brunch">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_thursday meal_soup" name="thursday" id="thursday_soup">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_thursday meal_main" name="thursday" id="thursday_main">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_thursday meal_dinner" name="thursday" id="thursday_dinner">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>PIĄTEK</th>
+                    <td>
+                      <select class="select_meal meal_friday meal_breakfast" name="friday" id="friday_brakfast">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_monday meal_brunch" name="friday" id="friday_brunch">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_friday meal_soup" name="friday" id="friday_soup">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_friday meal_main" name="friday" id="friday_main">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_friday meal_dinner" name="friday" id="friday_dinner">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>SOBOTA</th>
+                    <td>
+                      <select class="select_meal meal_saturday meal_breakfast" name="saturday" id="saturday_brakfast">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_saturday meal_brunch" name="saturady" id="saturday_brunch">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_saturday meal_soup" name="saturday" id="saturday_soup">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_saturday meal_main" name="saturday" id="saturday_main">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_saturday meal_dinner" name="saturday" id="saturday_dinner">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>NIEDZIELA</th>
+                    <td>
+                      <select class="select_meal meal_sunday meal_breakfast" name="sunday" id="sunday_brakfast">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_sunday meal_brunch" name="sunday" id="sunday_brunch">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_sunday meal_soup" name="sunday" id="sunday_soup">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_sunday meal_main" name="sunday" id="sunday_main">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select class="select_meal meal_sunday meal_dinner" name="sunday" id="sunday_dinner">
+                        <option value="">Zapiekanka z ziemniakami i brukselką</option>
+                        <option value="">Jakieś kolejne zapisane śniadanie</option>
+                        <option value="">Drugie śniadanie przepis delux</option>
+                        <option value="">Kolacja na wypasie</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>  
+              </table>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
     <script src="./js/app.js"></script>
