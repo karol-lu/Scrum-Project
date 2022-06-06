@@ -46,7 +46,7 @@
               <p class="recipe_step">Nazwa przepisu</p>
               <textarea
                 wrap="soft"
-                class="recipe_name"
+                class="recipe_name generalTextarea"
                 type="text"
                 placeholder="Zapiekanka z ziemniakami i brukselką"
               ></textarea>
@@ -55,73 +55,82 @@
               <p class="recipe_step">Opis przepisu</p>
               <textarea
                 wrap="soft"
-                class="recipe_description"
+                class="recipe_description generalTextarea
                 type="text"
                 placeholder="Mamusina najlepsza zapiekanka pod słońcem. Można ją podać jako główne danie albo jako kolację. W zapiekance możesz użyć również kiełbasy paprykowej sprawi ona, że zapiekanka będzie ostrzejsza w smaku. Zgodnie z zalecanimi Makłowicza, podawać z dobrze dobranym winkiem ;)"
               ></textarea>
             </section>
-            <section>
-              <div>
-                <div>Instrukcje</div>
-                <ipnut
+            <section class="recipe_box">
+              <div class="recipe_column">
+                <div class="recipe_instructions_headline">Instrukcje</div>
+                <div class="textAndButton">
+                <textarea class=" recipe_instructions_text generalTextarea"
                   type="text"
                   placeholder="Po tym czasie ziemniaki zalej śmietaną wymieszaną z Knorr Naturalnie smaczne, dodaj liście brukselki i dokładnie wymieszaj."
-                />
-                <ul>
-                  <li>
+                ></textarea>
+              <button
+              class="recipe_plus" id="add_instruction"/></div>
+                <ul
+              class="recipe_instructions_list">
+                  <li class="recipe_instructions_list_item">
                     <p>
                       Brukselkę obierz z zewnętrznych liści, nadetnij na krzyż
                       od strony głąba.
-                    </p>
+                    </p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"/>
                   </li>
-                  <li>
+                  <li class="recipe_instructions_list_item">
                     <p>
                       Gotuj około 5 minut w osolonym wrzątku. Odcedź i przelej
                       zimną wodą. Brukselkę przetnij na pół, wytnij głąb, a
                       następnie rozdziel od siebie wszystkie liście kapusty.
-                    </p>
+                    </p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"/>
                   </li>
-                  <li>
+                  <li class="recipe_instructions_list_item">
                     <p>
                       Obraną cebulę pokrój w kostkę, zeszklij na patelni na
                       rozgrzanej Ramie.
-                    </p>
+                    </p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"/>
                   </li>
-                  <li><p>Smaż około 2-3 minut cały czas mieszając.</p></li>
+                  <li class="recipe_instructions_list_item"><p>Smaż około 2-3 minut cały czas mieszając.</p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"/></li>
                 </ul>
               </div>
-            </section>
-            <section>
-              <div>
-                <div>Składniki</div>
-                <ipnut type="text" placeholder="parmezan lub inny ser" />
-                <ul>
-                  <li>
-                    <p>brukselka 300g</p>
+
+              <div class="recipe_column">
+                <div class="recipe_ingredients_headline">Składniki</div>
+                <div class="textAndButton">
+                <textarea
+                class="recipe_ingredients_text generalTextarea"
+                  type="text"
+                  placeholder="parmezan lub inny ser"
+                ></textarea><button
+              class="recipe_plus" id="add_ingredient"/></div>
+                <ul class="recipe_ingredients_list">
+                  <li class="recipe_ingredients_list_item">
+                    <p>brukselka 300g</p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"></button>
                   </li>
-                  <li>
-                    <p>ziemniaki 500g</p>
+                  <li class="recipe_ingredients_list_item">
+                    <p>ziemniaki 500g</p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"></button>
                   </li>
-                  <li>
-                    <p>Fix Naturalnie makaronowa z szynką Knorr 1 szt.</p>
+                  <li class="recipe_ingredients_list_item">
+                    <p>Fix Naturalnie makaronowa z szynką Knorr 1 szt.</p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"></button>
                   </li>
-                  <li>
-                    <p>średnia cebula 1szt</p>
+                  <li class="recipe_ingredients_list_item">
+                    <p>średnia cebula 1szt</p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"></button>
                   </li>
-                  <li>
-                    <p>ząbek czosnku</p>
+                  <li class="recipe_ingredients_list_item">
+                    <p>ząbek czosnku</p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"></button>
                   </li>
-                  <li>
-                    <p>kiełbasa np. śląska 500g</p>
+                  <li class="recipe_ingredients_list_item">
+                    <p>kiełbasa np. śląska 500g</p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"></button>
                   </li>
-                  <li>
-                    <p>śmietana 18% 200ml</p>
+                  <li class="recipe_ingredients_list_item">
+                    <p>śmietana 18% 200ml</p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"></button>
                   </li>
-                  <li>
-                    <p>Rama Smaż jak szef kuchni, wariant klasyczny 4 łyżki</p>
+                  <li class="recipe_ingredients_list_item">
+                    <p>Rama Smaż jak szef kuchni, wariant klasyczny 4 łyżki</p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"></button>
                   </li>
-                  <li>
-                    <p>gałązka tymianku 1 szt.</p>
+                  <li class="recipe_ingredients_list_item">
+                    <p>gałązka tymianku 1 szt.</p><button class="inlineButton" id="editLine"/><button class="inlineButton" id="removeLine"></button>
                   </li>
                 </ul>
               </div>

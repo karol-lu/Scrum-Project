@@ -51,14 +51,22 @@
     }
 }
 
+.generalTextarea{
+width: 720px;
+    padding: 5px 5px;
+    font-family: $primary-text-font;
+    resize: none;
+}
+
 .recipe{
     &_topBar{
         display: flex;
         justify-content: space-between;
         align-items: center;
-width: 994px;
-height: 50px;
-border-bottom: 2px solid $buttons-color;
+        width: 994px;
+        height: 50px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #CBCBCB;
 
 }
 &_new{
@@ -83,18 +91,13 @@ border-bottom: 2px solid $buttons-color;
 
     }
     &_name{
-        width: 720px;
         height: 30px;
-        padding: 0 10px;
-        font-family: $primary-text-font;
-        resize: none;
+        
+        
     }
     &_description{
-        width: 720px;
         height: 72px;
-        padding: 0 10px;
-        font-family: $primary-text-font;
-        resize: none;
+       
     }
     &_step{
         font-family: $primary-text-font;
@@ -104,4 +107,102 @@ border-bottom: 2px solid $buttons-color;
         width: 179px;
         height: 33px;
     }
+    &_box{
+        display: flex;
+        width: 994px;
+        
+    }
+    &_column{
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+    }
+    &_plus {
+        width: 28.67px;
+        height: 28.67px;
+        border: none;
+        border-radius: 6px;
+margin-left: 5px;
+
+        background-image: url("../../assets/green_plus.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+    
+        }
+    &_instructions{
+        &_headline{
+            font-size: 24px;
+            font-family: $primary-text-font;
+            color: $side-nav-color;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            width: 465px;
+            height: 33px;
+            margin: 40px 0 10px;
+            border-bottom: 2px solid #CBCBCB;
+        }
+        &_text {
+            width: 416px;
+            min-height: 73px;
+            
+        }
+        
+        &_list{
+            margin-top: 44px;
+            list-style: decimal;
+
+            &_item{
+
+            }
+        }
+
+    }
+    &_ingredients{
+        &_headline{
+            font-size: 24px;
+            font-family: $primary-text-font;
+            color: $side-nav-color;
+
+            width: 492px;
+            height: 33px;
+            margin: 40px 0 10px;
+            border-bottom: 2px solid #CBCBCB;
+        }
+        &_text {
+            width: 451px;
+        }
+         &_list {
+            list-style: disc;
+            list-style-position:outside;
+            &_item {
+
+            }
+                }
+    }
+
+}
+.textAndButton{
+
+}
+
+.inlineButton{
+    width: 15px;
+    height: 15px;
+    border: none;
+    margin-left: 5px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+#editLine{
+    background-image: url("../../assets/edit.png");
+
+}
+#removeLine{
+background-image: url("../../assets/remove.jpg");
 }
