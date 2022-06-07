@@ -90,34 +90,28 @@
   }
 }
 
-thead tr {
-  display: block;
-  position: relative;
-  border-top: solid 1px $table-text-color;
-  margin: 0 25px 0 5px;
-  padding-left: 8px;
-}
-
-tbody {
-  display: block;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: calc(100vh - 200px);
-  margin-left: 5px;
-  padding-left: 8px;
-}
-
-table {
+.recipes_box_table {
   table-layout: fixed;
   border-collapse: collapse;
   width: 100%;
   height: calc(100vh - 100px);
-}
 
-td:last-child {
-  display: flex;
-  justify-content: left;
-  align-items: center;
+  &_head tr {
+    display: block;
+    position: relative;
+    border-top: solid 1px $table-text-color;
+    margin: 0 25px 0 5px;
+    padding-left: 8px;
+  }
+
+  &_tbody {
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - 200px);
+    margin-left: 5px;
+    padding-left: 8px;
+  }
 }
 
 .action-icon-edit {
@@ -137,26 +131,31 @@ td:last-child {
 
 .row {
   border-bottom: solid 1px $table-text-color;
-}
 
-th, td {
-  text-align: left;
-  padding-right: 10px;
+  & th, td {
+    text-align: left;
+    padding-right: 10px;
 
-  &:first-child {
-    width: 100px;
+    &:first-child {
+      width: 100px;
+    }
+
+    &:nth-child(2) {
+      width: 250px;
+    }
+
+    &:nth-child(3) {
+      width: 599px;
+    }
+
+    &:nth-child(4) {
+      width: 120px;
+    }
   }
-
-  &:nth-child(2) {
-    width: 250px;
-  }
-
-  &:nth-child(3) {
-    width: 599px;
-  }
-
-  &:nth-child(4) {
-    width: 120px;
+  & td:last-child {
+    display: flex;
+    justify-content: left;
+    align-items: center;
   }
 }
 
