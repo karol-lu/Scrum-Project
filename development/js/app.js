@@ -43,7 +43,7 @@ function addUser(event) {
   event.preventDefault();
   const entryInput = document.querySelector(".entry_input");
 
-  if (entryInput.value.length > 3 ) {
+  if (entryInput.value.length >= 3 ) {
     userName.innerText = entryInput.value;
     saveUser();
   }
