@@ -16,75 +16,80 @@ const newInstructionList = document.querySelector(".recipe_instructions_list");
 const newIngredientsList = document.querySelector(".recipe_ingredients_list");
 
 const newRecipe = {
-    title:"",
-    description:"",
-    instructions: [],
-    ingredients: [],
-}
+  title: "",
+  description: "",
+  instructions: [],
+  ingredients: [],
+};
 
 function renderInstruction(instruction) {
-    let newLi = document.querySelector(".recipe_instructions_list_item").cloneNode(true);
+  let newLi = document
+    .querySelector(".recipe_instructions_list_item")
+    .cloneNode(true);
 
-    newLi.firstElementChild.innerText = instruction;
-    newInstructionList.appendChild(newLi);
+  newLi.firstElementChild.innerText = instruction;
+  newInstructionList.appendChild(newLi);
 }
 
-btnInstruction.addEventListener("click", event => {
-    event.preventDefault();
+btnInstruction.addEventListener("click", (event) => {
+  event.preventDefault();
 
-    newRecipe.instructions.push(recipeInstructions.value);
-    renderInstruction(recipeInstructions.value);
-    recipeInstructions.value= "";
+  newRecipe.instructions.push(recipeInstructions.value);
+  renderInstruction(recipeInstructions.value);
+  recipeInstructions.value = "";
 });
 
 function renderIngredients(ingredient) {
-    let newLi = document.querySelector(".recipe_ingredients_list_item").cloneNode(true);
+  let newLi = document
+    .querySelector(".recipe_ingredients_list_item")
+    .cloneNode(true);
 
-    newLi.firstElementChild.innerText = ingredient;
-    newIngredientsList.appendChild(newLi);
+  newLi.firstElementChild.innerText = ingredient;
+  newIngredientsList.appendChild(newLi);
 }
 
-btnIngredients.addEventListener("click", event => {
-    event.preventDefault();
+btnIngredients.addEventListener("click", (event) => {
+  event.preventDefault();
 
-    newRecipe.ingredients.push(recipeIngredients.value);
-    renderIngredients(recipeIngredients.value);
-    recipeIngredients.value= "";
+  newRecipe.ingredients.push(recipeIngredients.value);
+  renderIngredients(recipeIngredients.value);
+  recipeIngredients.value = "";
 });
-
 
 function saveRecipeToLocalStorage(newObject) {
-    let dataFromLocalStorage=[];
+  let dataFromLocalStorage = [];
 
-    if (localStorage.getItem("recipes") !== null) {
-        dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
-        dataFromLocalStorage.push(newObject);
-    } else {
-        dataFromLocalStorage.push(newObject);
-        localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
-    }
-    alert("Przepis zapisany do localSorage");
+  if (localStorage.getItem("recipes") !== null) {
+    dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
+    dataFromLocalStorage.push(newObject);
+  } else {
+    dataFromLocalStorage.push(newObject);
+    localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
+  }
+  alert("Przepis zapisany do localSorage");
 }
 
-btnNewRecipe.addEventListener("click", event => {
-    event.preventDefault();
+btnNewRecipe.addEventListener("click", (event) => {
+  event.preventDefault();
 
-    newRecipe.title = recipeName.value;
-    newRecipe.description = recipeDescription.value;
+  newRecipe.title = recipeName.value;
+  newRecipe.description = recipeDescription.value;
 
-    saveRecipeToLocalStorage(newRecipe);
-    recipeName.value="";
-    recipeDescription.value="";
-    console.log("zapisano:", newRecipe);
+  saveRecipeToLocalStorage(newRecipe);
+  recipeName.value = "";
+  recipeDescription.value = "";
+  console.log("zapisano:", newRecipe);
 });
 
-const newRecipeSection = document.querySelector('.new_recipes');
-const newRecipeBtnSave = document.querySelector('.recipe_save');
-const valueID = document.querySelector('.recipes_box_table_tbody .row:last-child td:first-child')
+const newRecipeSection = document.querySelector(".new_recipes");
+const newRecipeBtnSave = document.querySelector(".recipe_save");
+const valueID = document.querySelector(
+  ".recipes_box_table_tbody .row:last-child td:first-child"
+);
 console.log(valueID.innerText);
 const showHideRecipes = () => {
-    newRecipeSection.classList.add('hide');
-    recipesSection.classList.remove('hide');
+  newRecipeSection.classList.add("hide");
+  recipesSection.classList.remove("hide");
 };
 
 // const nextID = () => Number(valueID.innerText) + 1;
@@ -102,7 +107,38 @@ const showHideRecipes = () => {
 //
 // }
 
-newRecipeBtnSave.addEventListener('click', () => {
-    showHideRecipes();
-    // createNewRow();
+newRecipeBtnSave.addEventListener("click", () => {
+  showHideRecipes();
+  // createNewRow();
 });
+
+// edit recipes
+
+function editRecipe() {
+  const editButton = document.querySelectorAll(
+    ".recipes_box .action-icon-edit"
+  );
+  editButton.forEach(function (element) {
+    element.addEventListener("click", function () {
+      this.classList.toggle("active");
+
+      let description = this.closest(".row").querySelector(
+        ".td_text:nth-of-type(3)"
+      ).textContent;
+      let textArea = `<textarea name="edit" rows="4" cols="50">
+     ${description}
+      </textarea>`;
+      this.closest(".row").querySelector(".td_text:nth-of-type(3)").innerHTML =
+        textArea;
+      if (this.classList.contains("active")) {
+        let updatedDescription =
+          this.closest(".row").querySelector(".td_text textarea").value;
+        this.closest(".row").querySelector(
+          ".td_text:nth-of-type(3)"
+        ).innerHTML = updatedDescription;
+      }
+    });
+  });
+}
+
+editRecipe();
