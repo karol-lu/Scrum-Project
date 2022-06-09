@@ -28,7 +28,7 @@ const recipeDescription = document.querySelector(".recipe_description");
 const recipeInstructions = document.querySelector(".recipe_instructions_text");
 const recipeIngredients = document.querySelector(".recipe_ingredients_text");
 
-//recipe buttons 
+//recipe buttons
 const btnNewRecipe = document.querySelector(".recipe_save");
 const btnInstruction = document.querySelector("#add_instruction");
 const btnIngredients = document.querySelector("#add_ingredient");
@@ -73,7 +73,7 @@ btnIngredients.addEventListener("click", event => {
   renderIngredients(recipeIngredients.value);
   recipeIngredients.value= "";
  });
- 
+
 
  function saveRecipeToLocalStorage(newObject) {
    let dataFromLocalStorage=[];
@@ -100,6 +100,7 @@ btnIngredients.addEventListener("click", event => {
    console.log("zapisano:", newRecipe);
  });
 
-
-
+// previousButton.addEventListener('click', () => {
+// //
+// })
 
