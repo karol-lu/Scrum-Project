@@ -1,3 +1,11 @@
+//Check NAME
+const userName = document.querySelector(".app_name");
+const checkName = () => {
+    if (localStorage.getItem("user") != null) {
+        userName.innerText = localStorage.user;
+    }
+};
+checkName();
 // NEW RECIPE
 //
 // recipe input
@@ -20,7 +28,8 @@ const newRecipe = {
     description:"",
     instructions: [],
     ingredients: [],
-}
+};
+
 
 function renderInstruction(instruction) {
     let newLi = document.querySelector(".recipe_instructions_list_item").cloneNode(true);
@@ -31,7 +40,6 @@ function renderInstruction(instruction) {
 
 btnInstruction.addEventListener("click", event => {
     event.preventDefault();
-
     newRecipe.instructions.push(recipeInstructions.value);
     renderInstruction(recipeInstructions.value);
     recipeInstructions.value= "";
@@ -46,7 +54,6 @@ function renderIngredients(ingredient) {
 
 btnIngredients.addEventListener("click", event => {
     event.preventDefault();
-
     newRecipe.ingredients.push(recipeIngredients.value);
     renderIngredients(recipeIngredients.value);
     recipeIngredients.value= "";
@@ -54,16 +61,17 @@ btnIngredients.addEventListener("click", event => {
 
 
 function saveRecipeToLocalStorage(newObject) {
-    let dataFromLocalStorage=[];
+    let dataFromLocalStorage = [];
 
     if (localStorage.getItem("recipes") !== null) {
         dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
         dataFromLocalStorage.push(newObject);
+        localStorage.setItem('recipes', JSON.stringify(dataFromLocalStorage));
+
     } else {
         dataFromLocalStorage.push(newObject);
         localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
     }
-    alert("Przepis zapisany do localSorage");
 }
 
 btnNewRecipe.addEventListener("click", event => {
@@ -77,32 +85,61 @@ btnNewRecipe.addEventListener("click", event => {
     recipeDescription.value="";
     console.log("zapisano:", newRecipe);
 });
-
+//Add new recipe button action
+const recipesSection = document.querySelector('.recipes_box');
 const newRecipeSection = document.querySelector('.new_recipes');
+const addButton = document.querySelector('.action-icon-add');
+
+addButton.addEventListener('click', () => {
+        recipesSection.classList.add('hide');
+        newRecipeSection.classList.remove('hide');
+});
+
+//read recipe from local storage and add to recipes list
 const newRecipeBtnSave = document.querySelector('.recipe_save');
-const valueID = document.querySelector('.recipes_box_table_tbody .row:last-child td:first-child')
-console.log(valueID.innerText);
+
 const showHideRecipes = () => {
     newRecipeSection.classList.add('hide');
     recipesSection.classList.remove('hide');
 };
 
-// const nextID = () => Number(valueID.innerText) + 1;
-// const createNewRow = () => {
-//
-//     const newID = document.createElement('td');
-//     const newName = document.createElement('td');
-//     const newDescription = document.createElement('td');
-//     const newAction = document.createElement('td').cloneNode(false);
-//
-//     newID.innerText = nextID();
-//     newName.innerText = localStorage.getItem('title')
-//     newDescription.innerText = localStorage.getItem('description')
-//
-//
-// }
+const createNewRow = () => {
+
+
+    const valueID = document.querySelector('.recipes_box_table_tbody').lastElementChild;
+    console.log(valueID);
+    const nextID = () => Number(valueID.firstElementChild.innerText) + 1;
+    console.log(nextID());
+
+    const newRow = document.createElement('tr');
+    const newID = document.createElement('td');
+    const newName = document.createElement('td');
+    const newDescription = document.createElement('td');
+    const node = document.querySelector('tbody .row').lastElementChild;
+    const newAction = node.cloneNode(true);
+
+    newID.innerText = nextID();
+
+    const recipesArray = JSON.parse(localStorage.getItem("recipes"));
+    newName.innerText = recipesArray[recipesArray.length - 1].title;
+    newDescription.innerText = recipesArray[recipesArray.length - 1].description;
+
+    newID.classList.add('td_text');
+    newName.classList.add('td_text');
+    newDescription.classList.add('td_text');
+    newRow.classList.add('row');
+
+
+    newRow.appendChild(newID);
+    newRow.appendChild(newName);
+    newRow.appendChild(newDescription);
+    newRow.appendChild(newAction);
+
+    document.querySelector('tbody').appendChild(newRow);
+
+}
 
 newRecipeBtnSave.addEventListener('click', () => {
     showHideRecipes();
-    // createNewRow();
+    createNewRow();
 });
