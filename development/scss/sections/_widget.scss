@@ -1,0 +1,62 @@
+.widget {
+  width: 1150px;
+  .widget-one,
+  .widget-two,
+  .widget-three {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 250);
+    border-radius: 0px;
+    border-width: 1px;
+    border-color: rgb(52, 152, 219);
+    border-style: dashed;
+    width: 633px;
+    height: 51px;
+    .fa-circle-info {
+      color: rgb(52, 152, 219);
+    }
+    .fa-circle-exclamation {
+      color: rgb(255, 176, 59);
+    }
+    .fa-circle-check {
+      color: rgb(70, 137, 102);
+    }
+
+    p {
+      text-align: left;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: "G-Open Sans-n4", Arial;
+      opacity: 0.8;
+      line-height: 50px;
+    }
+  }
+}
+
+.widget-circle,
+.widget-warning,
+.widget-check {
+  margin-left: 10px;
+  line-height: 65px;
+}
+
+.x-one,
+.widget-text-one {
+  color: rgb(52, 152, 219);
+}
+.x-two,
+.widget-text-two {
+  color: rgb(255, 176, 59);
+}
+.x-three,
+.widget-text-three {
+  color: rgb(70, 137, 102);
+}
+
+.widget-box-one,
+.widget-box-two,
+.widget-box-three {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+}
