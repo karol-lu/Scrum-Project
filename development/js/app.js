@@ -6,11 +6,13 @@
 // const schedulesSection = document.querySelector('.schedules_box');
 // const newPlanSection = document.querySelector('.new_plan');
 // const newPlanBtn = document.querySelector('.new_plan_btn');
+// const recipesSection = document.querySelector('.recipes_box');
+// const newRecipeSection = document.querySelector('.new_recipes');
 
 // addButton.addEventListener('click', () => {
-// schedulesSection.classList.add('hide');
-// newPlanSection.classList.remove('hide');
-// });
+//   recipesSection.classList.add('hide');
+//   newRecipeSection.classList.remove('hide');
+//   });
 
 // newPlanBtn.addEventListener('click', () => {
 //     newPlanSection.classList.add('hide');
@@ -26,12 +28,12 @@ const recipeDescription = document.querySelector(".recipe_description");
 const recipeInstructions = document.querySelector(".recipe_instructions_text");
 const recipeIngredients = document.querySelector(".recipe_ingredients_text");
 
-// buttons 
+//recipe buttons 
 const btnNewRecipe = document.querySelector(".recipe_save");
 const btnInstruction = document.querySelector("#add_instruction");
 const btnIngredients = document.querySelector("#add_ingredient");
 
-// lists
+//recipe lists
 const newInstructionList = document.querySelector(".recipe_instructions_list");
 const newIngredientsList = document.querySelector(".recipe_ingredients_list");
 
@@ -44,12 +46,14 @@ const newRecipe = {
 
 function renderInstruction(instruction) {
   let newLi = document.querySelector(".recipe_instructions_list_item").cloneNode(true);
+
   newLi.firstElementChild.innerText = instruction;
   newInstructionList.appendChild(newLi);
 }
 
-btnInstruction.addEventListener("click", function(event) {
+btnInstruction.addEventListener("click", event => {
  event.preventDefault();
+
  newRecipe.instructions.push(recipeInstructions.value);
  renderInstruction(recipeInstructions.value);
  recipeInstructions.value= "";
@@ -57,12 +61,14 @@ btnInstruction.addEventListener("click", function(event) {
 
 function renderIngredients(ingredient) {
   let newLi = document.querySelector(".recipe_ingredients_list_item").cloneNode(true);
+
   newLi.firstElementChild.innerText = ingredient;
   newIngredientsList.appendChild(newLi);
 }
 
-btnIngredients.addEventListener("click", function(event) {
+btnIngredients.addEventListener("click", event => {
   event.preventDefault();
+
   newRecipe.ingredients.push(recipeIngredients.value);
   renderIngredients(recipeIngredients.value);
   recipeIngredients.value= "";
@@ -72,7 +78,7 @@ btnIngredients.addEventListener("click", function(event) {
  function saveRecipeToLocalStorage(newObject) {
    let dataFromLocalStorage=[];
 
-   if (localStorage.getItem("recipes") != null) {
+   if (localStorage.getItem("recipes") !== null) {
      dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
      dataFromLocalStorage.push(newObject);
    } else {
@@ -82,32 +88,18 @@ btnIngredients.addEventListener("click", function(event) {
    alert("Przepis zapisany do localSorage");
  }
 
- btnNewRecipe.addEventListener("click", function(event) {
+ btnNewRecipe.addEventListener("click", event => {
    event.preventDefault();
+
    newRecipe.title = recipeName.value;
    newRecipe.description = recipeDescription.value;
+
    saveRecipeToLocalStorage(newRecipe);
    recipeName.value="";
    recipeDescription.value="";
    console.log("zapisano:", newRecipe);
  });
 
-function renderAllRecipes() {
-  let allRecipes = JSON.parse(localSorage.getItem("recipes"));
-  let newList = document.querySelector(".row").cloneNode(true);
-
-  allRecipes.forEach(function(singleRecipe) {
-    newList.firstElementChild.nextElementSibling = singleRecipe.title;
-    newList.lastElementChild = singleRecipe.description;
-  });
-  document.querySelector(".recipes_box_table_tbody").appendChild(newList);
-}
-
-btnNewRecipe.addEventListener("click", renderAllRecipes);
-
-
-const one = document.querySelectorAll(".recipes_box_list");
-console.log(one);
 
 
 
