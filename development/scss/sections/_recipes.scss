@@ -1,62 +1,3 @@
-.app {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: $text-color;
-
-  &_logo {
-    padding-left: 30px;
-  }
-
-  &_login {
-    display: flex;
-  }
-
-  &_name {
-    font-size: 24px;
-    color: $background-color;
-    font-family: $primary-text-font;
-    margin: 5px 20px 0 0;
-  }
-
-  &_icon {
-    color: $buttons-color;
-    font-size: 35px;
-    margin-right: 50px;
-  }
-}
-
-.main_view {
-  display: flex;
-  height: 100vh;
-  background-image: url("../assets/background.png");
-  background-repeat: repeat;
-  background-size: 400px;
-}
-
-.sidebar {
-  width: 234px;
-  background-color: $side-nav-color;
-  color: $background-color;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-
-  &_paragraph {
-    padding: 30px 0 20px 20px;
-  }
-
-  &_dsh {
-    border-left: 5px solid $buttons-color;
-
-  }
-
-  &_icon {
-    float: right;
-    color: $buttons-color;
-    margin-right: 10px;
-  }
-}
-
 .recipes_box {
   height: calc(100vh - 100px);
   width: 1069px;
@@ -90,73 +31,75 @@
   }
 }
 
-thead tr {
-  display: block;
-  position: relative;
-  border-top: solid 1px $table-text-color;
-  margin: 0 25px 0 5px;
-  padding-left: 8px;
-}
-
-tbody {
-  display: block;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: calc(100vh - 200px);
-  margin-left: 5px;
-  padding-left: 8px;
-}
-
-table {
+.recipes_box_table {
   table-layout: fixed;
   border-collapse: collapse;
   width: 100%;
   height: calc(100vh - 100px);
-}
 
-td:last-child {
-  display: flex;
-  justify-content: left;
-  align-items: center;
+  &_head tr {
+    display: block;
+    position: relative;
+    border-top: solid 1px $table-text-color;
+    margin: 0 25px 0 5px;
+    padding-left: 8px;
+  }
+
+  &_tbody {
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - 200px);
+    margin-left: 5px;
+    padding-left: 8px;
+  }
 }
 
 .action-icon-edit {
   float: right;
   margin: 12px 12px 60px 4px;
   color: $buttons-color;
+  cursor: pointer;
 }
 
 .action-icon-trash {
   margin: 12px 12px 60px 0;
   color: $trash-icon-color;
+  cursor: pointer;
 }
 
 .action-icon-add {
   color: $success-color;
+  cursor: pointer;
 }
 
 .row {
   border-bottom: solid 1px $table-text-color;
-}
 
-th, td {
-  text-align: left;
-  padding-right: 10px;
+  & th, td {
+    text-align: left;
+    padding-right: 10px;
 
-  &:first-child {
-    width: 100px;
+    &:first-child {
+      width: 100px;
+    }
+
+    &:nth-child(2) {
+      width: 250px;
+    }
+
+    &:nth-child(3) {
+      width: 599px;
+    }
+
+    &:nth-child(4) {
+      width: 120px;
+    }
   }
-
-  &:nth-child(2) {
-    width: 250px;
-  }
-
-  &:nth-child(3) {
-    width: 599px;
-  }
-
-  &:nth-child(4) {
-    width: 120px;
+  & td:last-child {
+    display: flex;
+    justify-content: left;
+    align-items: center;
   }
 }
 
