@@ -1,0 +1,43 @@
+.popup_widget {
+  width: 1069px;
+}
+.popup_btn {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.popup_recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-right: 40px;
+  color: $success-color;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  border: 1px dashed $success-color;
+  padding: 30px;
+  width: 198px;
+  height: 177px;
+  background-color: $background-color;
+}
+.popup_schedules {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: $success-color;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  border: 1px dashed $success-color;
+  padding: 30px;
+  width: 198px;
+  height: 177px;
+  background-color: $background-color;
+
+}
+.fa-regular {
+  font-size: 61px;
+}
