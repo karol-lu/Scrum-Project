@@ -1,5 +1,5 @@
 .widget {
-  width: 1150px;
+  //width: 1150px;
   .widget-one,
   .widget-two,
   .widget-three {
@@ -11,7 +11,7 @@
     border-color: rgb(52, 152, 219);
     border-style: dashed;
     width: 633px;
-    height: 51px;
+    height: 46px;
     .fa-circle-info {
       color: rgb(52, 152, 219);
     }
@@ -39,7 +39,11 @@
   margin-left: 10px;
   line-height: 65px;
 }
-
+.fa-solid {
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 20px;
+}
 .x-one,
 .widget-text-one {
   color: rgb(52, 152, 219);
@@ -58,5 +62,6 @@
 .widget-box-three {
   display: flex;
   justify-content: flex-end;
-  padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
