@@ -1,8 +1,18 @@
 // widgets
 
 function widgets() {
-  const numberOfPlans = 0;
-  const numberOfRecipes = 99;
+  let numberOfPlans = 0;
+  let numberOfRecipes = 0;
+
+  if (localStorage.getItem("recipes") !== null) {
+    let dataFromLocalStorage = [];
+    dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
+
+    if (dataFromLocalStorage.length > 0) {
+      numberOfRecipes = dataFromLocalStorage.length;
+    }
+  }
+
   const closingButtons = document.querySelectorAll(".widget-x");
   closingButtons.forEach(function (element) {
     element.addEventListener("click", function () {
