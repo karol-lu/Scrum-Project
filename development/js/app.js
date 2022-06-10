@@ -4,6 +4,7 @@
 const entryBtn = document.querySelector(".entry_btn");
 const userName = document.querySelector(".app_name");
 const entrySection = document.querySelector(".entry");
+const main = document.querySelector(".main-2");
 
 function saveUser() {
   localStorage.setItem("user",userName.innerText);
@@ -16,6 +17,8 @@ function addUser(event) {
   if (entryInput.value.length >= 3 ) {
     userName.innerText = entryInput.value;
     saveUser();
+    entrySection.classList.add('hide');
+    main.classList.remove('hide');
   }
 }
 
@@ -24,10 +27,8 @@ entryBtn.addEventListener('click', addUser);
 if (localStorage.getItem("user") != null) {
   let newUser = localStorage.getItem("user");
   userName.innerText = newUser;
-  entrySection.style.display = "none"; 
-  document.querySelector(".main-2").classList.remove("hide");
-  
-  console.log(localStorage);
+  entrySection.classList.add('hide');
+  main.classList.remove('hide');
 }
 
 // show actual week
