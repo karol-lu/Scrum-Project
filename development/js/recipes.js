@@ -24,12 +24,11 @@ const newInstructionList = document.querySelector(".recipe_instructions_list");
 const newIngredientsList = document.querySelector(".recipe_ingredients_list");
 
 const newRecipe = {
-    title:"",
-    description:"",
-    instructions: [],
-    ingredients: [],
+  title: "",
+  description: "",
+  instructions: [],
+  ingredients: [],
 };
-
 
 function renderInstruction(instruction) {
     let newLi = document.querySelector(".recipe_instructions_list_item").cloneNode(true);
@@ -38,11 +37,12 @@ function renderInstruction(instruction) {
     newInstructionList.appendChild(newLi);
 }
 
-btnInstruction.addEventListener("click", event => {
-    event.preventDefault();
-    newRecipe.instructions.push(recipeInstructions.value);
-    renderInstruction(recipeInstructions.value);
-    recipeInstructions.value= "";
+btnInstruction.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  newRecipe.instructions.push(recipeInstructions.value);
+  renderInstruction(recipeInstructions.value);
+  recipeInstructions.value = "";
 });
 
 function renderIngredients(ingredient) {
@@ -52,16 +52,17 @@ function renderIngredients(ingredient) {
     newIngredientsList.appendChild(newLi);
 }
 
-btnIngredients.addEventListener("click", event => {
-    event.preventDefault();
-    newRecipe.ingredients.push(recipeIngredients.value);
-    renderIngredients(recipeIngredients.value);
-    recipeIngredients.value= "";
+btnIngredients.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  newRecipe.ingredients.push(recipeIngredients.value);
+  renderIngredients(recipeIngredients.value);
+  recipeIngredients.value = "";
 });
 
 
 function saveRecipeToLocalStorage(newObject) {
-    let dataFromLocalStorage = [];
+  let dataFromLocalStorage = [];
 
     if (localStorage.getItem("recipes") !== null) {
         dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
@@ -80,10 +81,10 @@ btnNewRecipe.addEventListener("click", event => {
     newRecipe.title = recipeName.value;
     newRecipe.description = recipeDescription.value;
 
-    saveRecipeToLocalStorage(newRecipe);
-    recipeName.value="";
-    recipeDescription.value="";
-    console.log("zapisano:", newRecipe);
+  saveRecipeToLocalStorage(newRecipe);
+  recipeName.value = "";
+  recipeDescription.value = "";
+  console.log("zapisano:", newRecipe);
 });
 //Add new recipe button action
 const recipesSection = document.querySelector('.recipes_box');
@@ -143,3 +144,34 @@ newRecipeBtnSave.addEventListener('click', () => {
     showHideRecipes();
     createNewRow();
 });
+
+// edit recipes
+
+function editRecipe() {
+  const editButton = document.querySelectorAll(
+    ".recipes_box .action-icon-edit"
+  );
+  editButton.forEach(function (element) {
+    element.addEventListener("click", function () {
+      this.classList.toggle("active");
+
+      let description = this.closest(".row").querySelector(
+        ".td_text:nth-of-type(3)"
+      ).textContent;
+      let textArea = `<textarea name="edit" rows="4" cols="50">
+     ${description}
+      </textarea>`;
+      this.closest(".row").querySelector(".td_text:nth-of-type(3)").innerHTML =
+        textArea;
+      if (this.classList.contains("active")) {
+        let updatedDescription =
+          this.closest(".row").querySelector(".td_text textarea").value;
+        this.closest(".row").querySelector(
+          ".td_text:nth-of-type(3)"
+        ).innerHTML = updatedDescription;
+      }
+    });
+  });
+}
+
+editRecipe();
