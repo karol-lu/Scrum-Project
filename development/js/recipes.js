@@ -210,8 +210,17 @@ editLineInstr.forEach(icon => {
 //  remove line
 
 const removeLine = document.querySelectorAll(".removeLine");
+const removeLineInstr = document.querySelectorAll(".removeLine_instruction");
 
 removeLine.forEach(icon => {
+    icon.addEventListener('click', e => {
+        e.preventDefault();
+
+        e.currentTarget.parentElement.remove();
+    });
+});
+
+removeLineInstr.forEach(icon => {
     icon.addEventListener('click', e => {
         e.preventDefault();
 
