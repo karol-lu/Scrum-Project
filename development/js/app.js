@@ -97,7 +97,7 @@ const addRecipes = document.querySelector('#popup_recipe')
 
 
 addRecipes.addEventListener('click', () => {
-  mainSection.classList.add('hide');
+  window.location.replace("http://localhost:3000/recipes.html");
 })
 
 
@@ -105,7 +105,6 @@ addRecipes.addEventListener('click', () => {
 const addSchedules = document.querySelector('#popup_schedules')
 
 addSchedules.addEventListener('click', () => {
-  mainSection.classList.add('hide');
-
+  window.location.replace("http://localhost:3000/schedules.html");
 })
 
