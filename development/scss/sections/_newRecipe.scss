@@ -146,10 +146,16 @@ margin-left: 5px;
     cursor: pointer;
 }
 
-#editLine{
+.editLine{
     background-image: url("../../assets/edit.png");
+    &_instruction {
+        background-image: url("../../assets/edit.png");
+    }
 
 }
-#removeLine{
+.removeLine{
 background-image: url("../../assets/remove.jpg");
+    &_instruction{
+        background-image: url("../../assets/remove.jpg");
+    }
 }
