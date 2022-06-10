@@ -202,6 +202,5 @@ removeLine.forEach(icon => {
         e.preventDefault();
 
         e.currentTarget.parentElement.remove();
-        localStorage.clear();
     });
 });
