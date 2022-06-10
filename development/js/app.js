@@ -89,5 +89,23 @@ const weekNumber = Math.ceil(days / 7);
 const weekCounter = document.querySelector('.week-counter');
 weekCounter.innerText = weekNumber;
 
+//widgets add_recipes
+const mainSection = document.querySelector('.main-2');
+const newRecipeSection = document.querySelector('.new_plan');
+const recipesSection = document.querySelector('.recipes_box');
+const addRecipes = document.querySelector('#popup_recipe')
 
+
+addRecipes.addEventListener('click', () => {
+  mainSection.classList.add('hide');
+})
+
+
+//widgets add_schedules
+const addSchedules = document.querySelector('#popup_schedules')
+
+addSchedules.addEventListener('click', () => {
+  mainSection.classList.add('hide');
+
+})
 
