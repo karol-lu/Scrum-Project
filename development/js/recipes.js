@@ -177,11 +177,25 @@ function editRecipe() {
 editRecipe();
 
 
-// recipe edit
+// recipe edit ingredients
 
 const editLine = document.querySelectorAll(".editLine");
 
 editLine.forEach(icon => {
+    icon.addEventListener('click', e => {
+        e.preventDefault();
+
+        e.currentTarget.previousElementSibling.setAttribute('contenteditable', 'true');
+        e.currentTarget.previousElementSibling.innerText = e.currentTarget.value;
+        newRecipe.ingredients.push(e.currentTarget.previousElementSibling.innerText);
+        saveRecipeToLocalStorage(newRecipe);
+    });
+});
+
+// edit instructions
+const editLineInstr = document.querySelectorAll(".editLine_instruction");
+
+editLineInstr.forEach(icon => {
     icon.addEventListener('click', e => {
         e.preventDefault();
 
