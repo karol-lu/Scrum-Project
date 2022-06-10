@@ -1,3 +1,11 @@
+//Check NAME
+const userName = document.querySelector(".app_name");
+const checkName = () => {
+    if (localStorage.getItem("user") != null) {
+        userName.innerText = localStorage.user;
+    }
+};
+checkName();
 // NEW RECIPE
 //
 // recipe input
@@ -23,12 +31,10 @@ const newRecipe = {
 };
 
 function renderInstruction(instruction) {
-  let newLi = document
-    .querySelector(".recipe_instructions_list_item")
-    .cloneNode(true);
+    let newLi = document.querySelector(".recipe_instructions_list_item").cloneNode(true);
 
-  newLi.firstElementChild.innerText = instruction;
-  newInstructionList.appendChild(newLi);
+    newLi.firstElementChild.innerText = instruction;
+    newInstructionList.appendChild(newLi);
 }
 
 btnInstruction.addEventListener("click", (event) => {
@@ -40,12 +46,10 @@ btnInstruction.addEventListener("click", (event) => {
 });
 
 function renderIngredients(ingredient) {
-  let newLi = document
-    .querySelector(".recipe_ingredients_list_item")
-    .cloneNode(true);
+    let newLi = document.querySelector(".recipe_ingredients_list_item").cloneNode(true);
 
-  newLi.firstElementChild.innerText = ingredient;
-  newIngredientsList.appendChild(newLi);
+    newLi.firstElementChild.innerText = ingredient;
+    newIngredientsList.appendChild(newLi);
 }
 
 btnIngredients.addEventListener("click", (event) => {
@@ -56,60 +60,89 @@ btnIngredients.addEventListener("click", (event) => {
   recipeIngredients.value = "";
 });
 
+
 function saveRecipeToLocalStorage(newObject) {
   let dataFromLocalStorage = [];
 
-  if (localStorage.getItem("recipes") !== null) {
-    dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
-    dataFromLocalStorage.push(newObject);
-  } else {
-    dataFromLocalStorage.push(newObject);
-    localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
-  }
-  alert("Przepis zapisany do localSorage");
+    if (localStorage.getItem("recipes") !== null) {
+        dataFromLocalStorage = JSON.parse(localStorage.getItem("recipes"));
+        dataFromLocalStorage.push(newObject);
+        localStorage.setItem('recipes', JSON.stringify(dataFromLocalStorage));
+
+    } else {
+        dataFromLocalStorage.push(newObject);
+        localStorage.setItem("recipes", JSON.stringify(dataFromLocalStorage));
+    }
 }
 
-btnNewRecipe.addEventListener("click", (event) => {
-  event.preventDefault();
+btnNewRecipe.addEventListener("click", event => {
+    event.preventDefault();
 
-  newRecipe.title = recipeName.value;
-  newRecipe.description = recipeDescription.value;
+    newRecipe.title = recipeName.value;
+    newRecipe.description = recipeDescription.value;
 
   saveRecipeToLocalStorage(newRecipe);
   recipeName.value = "";
   recipeDescription.value = "";
   console.log("zapisano:", newRecipe);
 });
+//Add new recipe button action
+const recipesSection = document.querySelector('.recipes_box');
+const newRecipeSection = document.querySelector('.new_recipes');
+const addButton = document.querySelector('.action-icon-add');
 
-const newRecipeSection = document.querySelector(".new_recipes");
-const newRecipeBtnSave = document.querySelector(".recipe_save");
-const valueID = document.querySelector(
-  ".recipes_box_table_tbody .row:last-child td:first-child"
-);
-console.log(valueID.innerText);
+addButton.addEventListener('click', () => {
+        recipesSection.classList.add('hide');
+        newRecipeSection.classList.remove('hide');
+});
+
+//read recipe from local storage and add to recipes list
+const newRecipeBtnSave = document.querySelector('.recipe_save');
+
 const showHideRecipes = () => {
-  newRecipeSection.classList.add("hide");
-  recipesSection.classList.remove("hide");
+    newRecipeSection.classList.add('hide');
+    recipesSection.classList.remove('hide');
 };
 
-// const nextID = () => Number(valueID.innerText) + 1;
-// const createNewRow = () => {
-//
-//     const newID = document.createElement('td');
-//     const newName = document.createElement('td');
-//     const newDescription = document.createElement('td');
-//     const newAction = document.createElement('td').cloneNode(false);
-//
-//     newID.innerText = nextID();
-//     newName.innerText = localStorage.getItem('title')
-//     newDescription.innerText = localStorage.getItem('description')
-//
-//
-// }
+const createNewRow = () => {
 
-newRecipeBtnSave.addEventListener("click", () => {
-  showHideRecipes();
-  // createNewRow();
+
+    const valueID = document.querySelector('.recipes_box_table_tbody').lastElementChild;
+    console.log(valueID);
+    const nextID = () => Number(valueID.firstElementChild.innerText) + 1;
+    console.log(nextID());
+
+    const newRow = document.createElement('tr');
+    const newID = document.createElement('td');
+    const newName = document.createElement('td');
+    const newDescription = document.createElement('td');
+    const node = document.querySelector('tbody .row').lastElementChild;
+    const newAction = node.cloneNode(true);
+
+    newID.innerText = nextID();
+
+    const recipesArray = JSON.parse(localStorage.getItem("recipes"));
+    newName.innerText = recipesArray[recipesArray.length - 1].title;
+    newDescription.innerText = recipesArray[recipesArray.length - 1].description;
+
+    newID.classList.add('td_text');
+    newName.classList.add('td_text');
+    newDescription.classList.add('td_text');
+    newRow.classList.add('row');
+
+
+    newRow.appendChild(newID);
+    newRow.appendChild(newName);
+    newRow.appendChild(newDescription);
+    newRow.appendChild(newAction);
+
+    document.querySelector('tbody').appendChild(newRow);
+
+}
+
+newRecipeBtnSave.addEventListener('click', () => {
+    showHideRecipes();
+    createNewRow();
 });
 
 // edit recipes

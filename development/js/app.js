@@ -43,35 +43,6 @@ function widgets() {
 
 widgets();
 
-// button action
-
-// const addButton = document.querySelector('.action-icon-add');
-// const editButton = document.querySelectorAll('.action-icon-edit');
-// const deleteButton = document.querySelectorAll('.action-icon-trash');
-// const schedulesSection = document.querySelector('.schedules_box');
-// const recipesSection = document.querySelector('.recipes_box');
-
-
-// addButton.addEventListener('click', (event) => {
-//     if (event.target.parentNode.classList.contains('recipes_box_title')){
-//         recipesSection.classList.add('hide');
-//         newRecipeSection.classList.remove('hide');
-//     }else if (event.target.parentNode.classList.contains('schedules_box_title')) {
-//         schedulesSection.classList.add('hide');
-//         newScheduleSection.classList.remove('hide');
-//     }
-//   });
-
-
-
-
-
-
-
-// previousButton.addEventListener('click', () => {
-// //
-// })
-
 
 
 // NameStorage
@@ -79,6 +50,7 @@ widgets();
 const entryBtn = document.querySelector(".entry_btn");
 const userName = document.querySelector(".app_name");
 const entrySection = document.querySelector(".entry");
+const main = document.querySelector(".main-2");
 
 function saveUser() {
   localStorage.setItem("user",userName.innerText);
@@ -91,6 +63,8 @@ function addUser(event) {
   if (entryInput.value.length >= 3 ) {
     userName.innerText = entryInput.value;
     saveUser();
+    entrySection.classList.add('hide');
+    main.classList.remove('hide');
   }
 }
 
@@ -99,9 +73,21 @@ entryBtn.addEventListener('click', addUser);
 if (localStorage.getItem("user") != null) {
   let newUser = localStorage.getItem("user");
   userName.innerText = newUser;
-  entrySection.style.display = "none"; 
-  document.querySelector(".main-2").classList.remove("hide");
-  
-  console.log(localStorage);
+  entrySection.classList.add('hide');
+  main.classList.remove('hide');
 }
+
+// show actual week
+
+currentDate = new Date();
+startDate = new Date(currentDate.getFullYear(), 0, 1);
+const days = Math.floor((currentDate - startDate) /
+    (24 * 60 * 60 * 1000));
+
+const weekNumber = Math.ceil(days / 7);
+
+const weekCounter = document.querySelector('.week-counter');
+weekCounter.innerText = weekNumber;
+
+
 
