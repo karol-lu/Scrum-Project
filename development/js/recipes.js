@@ -180,10 +180,11 @@ editRecipe();
 // recipe edit
 
 const editLine = document.querySelectorAll(".editLine");
-const removeLine = document.querySelectorAll(".removeLine");
 
 editLine.forEach(icon => {
     icon.addEventListener('click', e => {
+        e.preventDefault();
+
         e.currentTarget.previousElementSibling.setAttribute('contenteditable', 'true');
         e.currentTarget.previousElementSibling.innerText = e.currentTarget.value;
         newRecipe.instructions.push(e.currentTarget.previousElementSibling.innerText);
@@ -192,3 +193,15 @@ editLine.forEach(icon => {
 });
 
 
+//  remove line
+
+const removeLine = document.querySelectorAll(".removeLine");
+
+removeLine.forEach(icon => {
+    icon.addEventListener('click', e => {
+        e.preventDefault();
+
+        e.currentTarget.parentElement.remove();
+        localStorage.clear();
+    });
+});
