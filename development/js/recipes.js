@@ -175,3 +175,20 @@ function editRecipe() {
 }
 
 editRecipe();
+
+
+// recipe edit
+
+const editLine = document.querySelectorAll(".editLine");
+const removeLine = document.querySelectorAll(".removeLine");
+
+editLine.forEach(icon => {
+    icon.addEventListener('click', e => {
+        e.currentTarget.previousElementSibling.setAttribute('contenteditable', 'true');
+        e.currentTarget.previousElementSibling.innerText = e.currentTarget.value;
+        newRecipe.instructions.push(e.currentTarget.previousElementSibling.innerText);
+        saveRecipeToLocalStorage(newRecipe);
+    });
+});
+
+
